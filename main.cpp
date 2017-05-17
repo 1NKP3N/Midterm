@@ -86,10 +86,5 @@ int main() {
     fibTester(15);
     classTester();
 
-    Term t1(1, 2);
-    Term t2(4, 2);
-
-    //cout << t1.toString();
-
     return 0;
 }
