@@ -16,15 +16,17 @@ using namespace std;
 // Use 0, 1 as the first two numbers
 // Return 'nullptr' if n < 1.
 int* getFibs(int n) {
+    if(n > 1){
+        int* arr = new int[n];
+        arr[0] = 0;
+        arr[1] = 1;
 
-    int* arr = new int[n];
-    arr[0] = 0;
-    arr[1] = 1;
-
-    for (int i = 2; i < n; i++){
-        arr[i] = arr[i - 1] + arr[i - 2];
+        for (int i = 2; i < n; i++){
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        return arr;
     }
-    return arr;
+    return nullptr;
 }
 
 // Print Array of int
@@ -71,8 +73,8 @@ void classTester() {
     Polynomial poly4{coefs};
     poly4.print();
 
-    cout << poly << endl;
-    cout << poly2 << endl;
+    cout << "poly + poly2 = " << poly + poly2 << endl;
+    cout << "poly + poly2 = " << poly + poly3 << endl;
 
     cout << boolalpha << (poly == poly2) << endl;
     cout << boolalpha << (poly != poly4) << endl;
